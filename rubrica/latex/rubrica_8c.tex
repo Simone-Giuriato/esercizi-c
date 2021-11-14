@@ -1,0 +1,165 @@
+\hypertarget{rubrica_8c}{}\doxysection{rubrica.\+c File Reference}
+\label{rubrica_8c}\index{rubrica.c@{rubrica.c}}
+
+
+gestisce una rubrica, mostra, aggiunge e rimuove contatti dalla rubrica  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}}
+\begin{DoxyCompactList}\small\item\em struct di nome\+: \char`\"{}\+PERSONA\+\_\+\+T\char`\"{}, ogni persona ha un nome, cognome e un numero di telefono \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{rubrica_8c_a82acb32225c05e9aa4c524c40bc5852a}{MAX\+\_\+\+CHAR}}~10
+\item 
+\#define \mbox{\hyperlink{rubrica_8c_ab8c429afeb704c26441e94808d7f5bab}{SINGLE\+\_\+\+LINE}}~33
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{rubrica_8c_a8849379e0779110db2f2d0450ad3d811}{Conta\+Righe}} (FILE $\ast$rubrica, char filename\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em funzione che ricevendo come parametro il puntatore \char`\"{}rubrica\char`\"{} e il nome del file, restituisce il numero di righe di cui il file è composto \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rubrica_8c_ab5c3c934a675f0dd0ef9a7b2701289b3}{Mostra\+Rubrica}} (FILE $\ast$rubrica, char filename\mbox{[}$\,$\mbox{]}, int righe)
+\begin{DoxyCompactList}\small\item\em mostra a schermo la lista dei contatti presente nel file passato per parametro al\textquotesingle{}esecuzione del programma \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rubrica_8c_ac45ae98cd7401bd59d290e7ef8ec8c1e}{Aggiungi\+Contatto}} (FILE $\ast$rubrica, char filename\mbox{[}$\,$\mbox{]}, int righe, \mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}} nuovo\+Contatto, char filename\+Out\mbox{[}$\,$\mbox{]}, int argc)
+\begin{DoxyCompactList}\small\item\em aggiunge alla lista un nuovo contatto, che l\textquotesingle{}utente vuole aggiungere \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{rubrica_8c_a05e48f0b4981c785d5a88194f56ec297}{Rimuovi\+Contatto}} (FILE $\ast$rubrica, char filename\mbox{[}$\,$\mbox{]}, int righe, \mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}} canc\+Contatto, char filename\+Out\mbox{[}$\,$\mbox{]}, int argc)
+\begin{DoxyCompactList}\small\item\em rimuove dalla lista dei un contatto, che l\textquotesingle{}utente vuole eliminare \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{rubrica_8c_a0ddf1224851353fc92bfbff6f499fa97}\label{rubrica_8c_a0ddf1224851353fc92bfbff6f499fa97}} 
+int {\bfseries main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+gestisce una rubrica, mostra, aggiunge e rimuove contatti dalla rubrica 
+
+\begin{DoxyAuthor}{Author}
+Giuriato Simone 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Il file è stato creato l\textquotesingle{}12/11/2021 
+\end{DoxyDate}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{rubrica_8c_a82acb32225c05e9aa4c524c40bc5852a}\label{rubrica_8c_a82acb32225c05e9aa4c524c40bc5852a}} 
+\index{rubrica.c@{rubrica.c}!MAX\_CHAR@{MAX\_CHAR}}
+\index{MAX\_CHAR@{MAX\_CHAR}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_CHAR}{MAX\_CHAR}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+CHAR~10}
+
+
+\begin{DoxyParams}{Parameters}
+{\em MAX\+\_\+\+CHAR} & dimensione massima dei caratteri che il nome e cognome possono avere \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{rubrica_8c_ab8c429afeb704c26441e94808d7f5bab}\label{rubrica_8c_ab8c429afeb704c26441e94808d7f5bab}} 
+\index{rubrica.c@{rubrica.c}!SINGLE\_LINE@{SINGLE\_LINE}}
+\index{SINGLE\_LINE@{SINGLE\_LINE}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{SINGLE\_LINE}{SINGLE\_LINE}}
+{\footnotesize\ttfamily \#define SINGLE\+\_\+\+LINE~33}
+
+
+\begin{DoxyParams}{Parameters}
+{\em SINGLE\+\_\+\+LINE} & dimensione massima di una riga, sul file (~\newline
+ incluso) \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{rubrica_8c_ac45ae98cd7401bd59d290e7ef8ec8c1e}\label{rubrica_8c_ac45ae98cd7401bd59d290e7ef8ec8c1e}} 
+\index{rubrica.c@{rubrica.c}!AggiungiContatto@{AggiungiContatto}}
+\index{AggiungiContatto@{AggiungiContatto}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{AggiungiContatto()}{AggiungiContatto()}}
+{\footnotesize\ttfamily void Aggiungi\+Contatto (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{rubrica,  }\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{int}]{righe,  }\item[{\mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}}}]{nuovo\+Contatto,  }\item[{char}]{filename\+Out\mbox{[}$\,$\mbox{]},  }\item[{int}]{argc }\end{DoxyParamCaption})}
+
+
+
+aggiunge alla lista un nuovo contatto, che l\textquotesingle{}utente vuole aggiungere 
+
+
+\begin{DoxyParams}{Parameters}
+{\em FILE} & $\ast$rubrica\+: puntatore di tipo FILE \\
+\hline
+{\em char} & filename\mbox{[}\mbox{]}\+: nome del file da leggere \\
+\hline
+{\em int} & righe\+: numero di righe presenti nel file \\
+\hline
+{\em \mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}}} & nuovo\+Contatto\+: dati del contatto che l\textquotesingle{}utente vuole aggiungere \\
+\hline
+{\em char} & filename\+Out\mbox{[}\mbox{]}\+: nome dell\textquotesingle{}eventuale file di output dove aggiornare la lista \\
+\hline
+{\em int} & argc\+: numero di argomenti che il programma, all\textquotesingle{}avvio ha ricevuto coem parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{rubrica_8c_a8849379e0779110db2f2d0450ad3d811}\label{rubrica_8c_a8849379e0779110db2f2d0450ad3d811}} 
+\index{rubrica.c@{rubrica.c}!ContaRighe@{ContaRighe}}
+\index{ContaRighe@{ContaRighe}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{ContaRighe()}{ContaRighe()}}
+{\footnotesize\ttfamily int Conta\+Righe (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{rubrica,  }\item[{char}]{filename\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+funzione che ricevendo come parametro il puntatore \char`\"{}rubrica\char`\"{} e il nome del file, restituisce il numero di righe di cui il file è composto 
+
+
+\begin{DoxyParams}{Parameters}
+{\em FILE} & $\ast$rubrica\+: puntatore di tipo FILE \\
+\hline
+{\em char} & filename\mbox{[}\mbox{]}\+: nome del file da leggere \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+righe\+: ritorna il numero di righe presente nel file 
+\end{DoxyReturn}
+\mbox{\Hypertarget{rubrica_8c_ab5c3c934a675f0dd0ef9a7b2701289b3}\label{rubrica_8c_ab5c3c934a675f0dd0ef9a7b2701289b3}} 
+\index{rubrica.c@{rubrica.c}!MostraRubrica@{MostraRubrica}}
+\index{MostraRubrica@{MostraRubrica}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{MostraRubrica()}{MostraRubrica()}}
+{\footnotesize\ttfamily void Mostra\+Rubrica (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{rubrica,  }\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{int}]{righe }\end{DoxyParamCaption})}
+
+
+
+mostra a schermo la lista dei contatti presente nel file passato per parametro al\textquotesingle{}esecuzione del programma 
+
+
+\begin{DoxyParams}{Parameters}
+{\em FILE} & $\ast$rubrica\+: puntatore di tipo FILE \\
+\hline
+{\em char} & filename\mbox{[}\mbox{]}\+: nome del file da leggere \\
+\hline
+{\em int} & righe\+: numero di righe presenti nel file \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{rubrica_8c_a05e48f0b4981c785d5a88194f56ec297}\label{rubrica_8c_a05e48f0b4981c785d5a88194f56ec297}} 
+\index{rubrica.c@{rubrica.c}!RimuoviContatto@{RimuoviContatto}}
+\index{RimuoviContatto@{RimuoviContatto}!rubrica.c@{rubrica.c}}
+\doxysubsubsection{\texorpdfstring{RimuoviContatto()}{RimuoviContatto()}}
+{\footnotesize\ttfamily void Rimuovi\+Contatto (\begin{DoxyParamCaption}\item[{FILE $\ast$}]{rubrica,  }\item[{char}]{filename\mbox{[}$\,$\mbox{]},  }\item[{int}]{righe,  }\item[{\mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}}}]{canc\+Contatto,  }\item[{char}]{filename\+Out\mbox{[}$\,$\mbox{]},  }\item[{int}]{argc }\end{DoxyParamCaption})}
+
+
+
+rimuove dalla lista dei un contatto, che l\textquotesingle{}utente vuole eliminare 
+
+
+\begin{DoxyParams}{Parameters}
+{\em FILE} & $\ast$rubrica\+: puntatore di tipo FILE \\
+\hline
+{\em char} & filename\mbox{[}\mbox{]}\+: nome del file da leggere \\
+\hline
+{\em int} & righe\+: numero di righe presenti nel file \\
+\hline
+{\em \mbox{\hyperlink{struct_p_e_r_s_o_n_a___t}{PERSONA\+\_\+T}}} & canc\+Contatto\+: dati del contatto che l\textquotesingle{}utente vuole rimuovere \\
+\hline
+{\em char} & filename\+Out\mbox{[}\mbox{]}\+: nome dell\textquotesingle{}eventuale file di output dove aggiornare la lista \\
+\hline
+{\em int} & argc\+: numero di argomenti che il programma, all\textquotesingle{}avvio ha ricevuto coem parametro \\
+\hline
+\end{DoxyParams}
