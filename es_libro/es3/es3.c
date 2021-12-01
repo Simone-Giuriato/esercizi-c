@@ -1,3 +1,8 @@
+/// @file       es3.c
+/// @brief      file dell'esercizio 3 del libro pdf
+/// @date       26/11/2021
+/// @author     Giuriato Simone
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -5,6 +10,10 @@
 #include <fcntl.h>
 #include <unistd.h>
 
+/**
+* @fn           int main()
+* @brief        funzione principale che crea tre processi figli, i quali stamperanno "Ciao, io sono Qui", "Ciao, io sono Quo", "Ciao, io sono Qua"
+*/
 int main(){
     int pid;
     int pid1;
@@ -37,7 +46,7 @@ int main(){
         }
 
     }
-    }
+	}
    
 
 }
