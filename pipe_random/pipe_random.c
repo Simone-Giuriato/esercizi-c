@@ -1,9 +1,17 @@
+/// @file       pipe_random.c 
+/// @brief      programma che permette, la somma di 10 numeri generati randomicamente con l'utilizzo di due pipe e comunicando tra proccessi
+/// @date       16/12/2021
+/// @author     Giuriato Simone
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
 #include <time.h>
-
+/**
+* @fn           int main()
+* @brief        funzione principale che crea due pipe, successivamente istanzia il processo padre che genera 10 numeri casuali e li passa al figlio utilizzando le pipe. Successivamente il processo figlio li somma e passa la somma al padre, il quale stampera' il risultato.
+*/ 
 
 int main(){
     int canale1[2], canale2[2];
